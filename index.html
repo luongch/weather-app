@@ -8,13 +8,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form id="locationForm">
-        <label for="location">Location</label>
-        <input type="text" name="location" id="location">
-        <button type="button" onclick="getWeather()">Get Weather</button>
-    </form>
+    
     
     <div class="container">
+        <div class="search">
+            <form id="locationForm">
+                <span>
+                    <label for="location">Location</label>
+                    <input type="text" name="location" id="location">
+                    <button type="button" onclick="getWeather()">Get Weather</button>
+                </span>
+            </form>
+        </div>
+        <div class="weather">
+            <div class="sun"></div>
+            <div class="city"></div>
+            <div class="temps">
+                <div class="temp"></div>
+                <div class="feelsLike">FEELS LIKE: </div>
+                <div class="wind">WIND: </div>
+                <div class="humidity">HUMIDITY: </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

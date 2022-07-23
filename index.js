@@ -19,17 +19,38 @@ const  getWeather = async () => {
 } 
 
 function displayWeather(data) {
-    let container = document.querySelector('.container');
-        container.innerHTML = JSON.stringify(data)
+    let city = document.querySelector('.city');
+    city.innerHTML = data.city
+
+    let temp = document.querySelector('.temp');
+    temp.innerHTML = data.temps.temp + "&#8451";
+
+    let feelsLike = document.querySelector('.feelsLike');
+    feelsLike.innerHTML += data.temps.feels_like  + "&#8451";
+
+    let sun = document.querySelector('.sun');
+    sun.innerHTML = data.weather.description
+
+    let wind = document.querySelector('.wind');
+    wind.innerHTML += data.wind.speed + "KM/H"
+    
+    let humidity = document.querySelector('.humidity')
+    humidity.innerHTML += data.temps.humidity
+    
+    
 }
 
 const processData = (data) => {
-    let temps = data.main
-    let weather = data.weather[0]
+    let temps = data.main;
+    let weather = data.weather[0];
+    let city = data.name;
+    let wind = data.wind;
 
     let processedData =  {
         temps,
-        weather
+        weather,
+        city,
+        wind
     }
     return processedData
 
