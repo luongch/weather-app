@@ -26,19 +26,19 @@ function displayWeather(data) {
     temp.innerHTML = data.temps.temp + "&#8451";
 
     let feelsLike = document.querySelector('.feelsLike');
-    feelsLike.innerHTML += data.temps.feels_like  + "&#8451";
+    feelsLike.innerHTML = `FEELS LIKE: ${data.temps.feels_like} &#8451`;
 
     let sun = document.querySelector('.sun');
     sun.innerHTML = data.weather.description
 
     let wind = document.querySelector('.wind');
-    wind.innerHTML += data.wind.speed + "KM/H"
+    wind.innerHTML = `WIND: ${data.wind.speed} KM/H`
     
     let humidity = document.querySelector('.humidity')
-    humidity.innerHTML += data.temps.humidity
-    
-    
+    humidity.innerHTML = `HUMIDITY: ${data.temps.humidity}`
 }
+
+
 
 const processData = (data) => {
     let temps = data.main;
@@ -57,3 +57,15 @@ const processData = (data) => {
 }
 
 getWeather()
+
+
+// Execute a function when the user presses a key on the keyboard
+document.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("submit").click();
+  }
+});

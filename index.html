@@ -13,11 +13,9 @@
     <div class="container">
         <div class="search">
             <form id="locationForm">
-                <span>
                     <label for="location">Location</label>
                     <input type="text" name="location" id="location">
-                    <button type="button" onclick="getWeather()">Get Weather</button>
-                </span>
+                    <button id="submit" type="button" onclick="getWeather()">Get Weather</button>
             </form>
         </div>
         <div class="weather">
@@ -25,9 +23,9 @@
             <div class="city"></div>
             <div class="temps">
                 <div class="temp"></div>
-                <div class="feelsLike">FEELS LIKE: </div>
-                <div class="wind">WIND: </div>
-                <div class="humidity">HUMIDITY: </div>
+                <div class="feelsLike"></div>
+                <div class="wind"></div>
+                <div class="humidity"></div>
             </div>
         </div>
     </div>
