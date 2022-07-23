@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button onclick="getWeather()">Get Weather</button>
+    <form id="locationForm">
+        <label for="location">Location</label>
+        <input type="text" name="location" id="location">
+        <button type="button" onclick="getWeather()">Get Weather</button>
+    </form>
+    
     <div class="container">
     </div>
 </body>
